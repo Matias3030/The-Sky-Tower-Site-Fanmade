@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title id="pageTitle">Sky Tower - Planes de Construcción</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo.png">
+    <script>
+        function translatePage() {
+            let body = document.body;
+            let elementsToTranslate = {
+                es: {
+                    title: "Sky Tower - Planes de Construcción",
+                    heading: "Sky Tower - Planes de Construcción",
+                    menu: "Menú",
+                    home: "Hogar",
+                    history: "Historia",
+                    construction: "Planes de Construcción",
+                    tickets: "Entradas",
+                    status: "Estado Actual",
+                    donations: "Apoya nuestros esfuerzos",
+                    constructionTitle: "Nuestro Plan de Reconstrucción",
+                    constructionDesc: "Sky Tower se encuentra en una fase crítica de reconstrucción después de múltiples desastres naturales.",
+                    engineerTitle: "Nuestro Ingeniero Jefe",
+                    engineerDesc: "El líder de la reconstrucción de Sky Tower, con más de 30 años de experiencia en estructuras que no deberían colapsar.",
+                    progressTitle: "Progreso de Construcción",
+                    warning: "⚠️ La reconstrucción de Sky Tower está en progreso. Visitar la zona no está permitido. ⚠️",
+                    translateButton: "Traducir"
+                },
+                en: {
+                    title: "Sky Tower - Construction Plans",
+                    heading: "Sky Tower - Construction Plans",
+                    menu: "Navigation",
+                    home: "Home",
+                    history: "History",
+                    construction: "Construction Plans",
+                    tickets: "Tickets & Admission",
+                    status: "Current Status",
+                    donations: "Support Our Efforts",
+                    constructionTitle: "Our Reconstruction Plan",
+                    constructionDesc: "Sky Tower is currently in a critical rebuilding phase after multiple natural disasters.",
+                    engineerTitle: "Our Chief Engineer",
+                    engineerDesc: "The leader of Sky Tower's reconstruction, with over 30 years of experience in structures that shouldn't collapse.",
+                    progressTitle: "Construction Progress",
+                    warning: "⚠️ Sky Tower reconstruction is underway. Visiting the area is not allowed. ⚠️",
+                    translateButton: "Translate"
+                }
+            };
+
+            document.getElementById("translateButton").style.transform = "scale(0.8)";
+            setTimeout(() => {
+                document.getElementById("translateButton").style.transform = "scale(1)";
+            }, 400);
+
+            let audio = new Audio("BUTTON1.wav");
+            audio.play();
+
+            let lang = body.lang === "es" ? "en" : "es";
+            body.lang = lang;
+
+            document.title = elementsToTranslate[lang].title;
+            document.getElementById("pageTitle").innerText = elementsToTranslate[lang].title;
+            document.querySelector("h1").innerText = elementsToTranslate[lang].heading;
+            document.getElementById("menuTitle").innerText = elementsToTranslate[lang].menu;
+            document.getElementById("homeLink").innerText = elementsToTranslate[lang].home;
+            document.getElementById("historyLink").innerText = elementsToTranslate[lang].history;
+            document.getElementById("constructionLink").innerText = elementsToTranslate[lang].construction;
+            document.getElementById("ticketsLink").innerText = elementsToTranslate[lang].tickets;
+            document.getElementById("statusLink").innerText = elementsToTranslate[lang].status;
+            document.getElementById("donationsLink").innerText = elementsToTranslate[lang].donations;
+            document.getElementById("constructionTitle").innerText = elementsToTranslate[lang].constructionTitle;
+            document.getElementById("constructionDesc").innerText = elementsToTranslate[lang].constructionDesc;
+            document.getElementById("engineerTitle").innerText = elementsToTranslate[lang].engineerTitle;
+            document.getElementById("engineerDesc").innerText = elementsToTranslate[lang].engineerDesc;
+            document.getElementById("progressTitle").innerText = elementsToTranslate[lang].progressTitle;
+            document.getElementById("warning").innerText = elementsToTranslate[lang].warning;
+            document.getElementById("translateButton").innerText = elementsToTranslate[lang].translateButton;
+        }
+    </script>
+    <style>
+        #translateButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: "Comic Sans MS", cursive;
+            background: linear-gradient(to bottom, #00BFFF, #00008B);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        #translateButton:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body bgcolor="#000000" text="#FFFFFF">
+    <button id="translateButton" onclick="translatePage()">Traducir</button>
+    
+    <center>
+        <!-- GIF decorativo -->
+        <img src="tower.gif" alt="Sky Tower Animation" width="700" height="120">
+
+        <table border="0" width="80%">
+            <tr>
+                <td colspan="2">
+                    <!-- Logo y título -->
+                    <img src="logo.png" alt="Sky Tower Logo" width="150" height="150">
+                    <h1 id="pageTitle">Sky Tower - Planes de Construcción</h1>
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" bgcolor="#202020">
+                    <h2 id="menuTitle">Menú</h2>
+                    <ul>
+                        <li><a href="Skytower.html" id="homeLink">Hogar</a></li>
+                        <li><a href="history.html" id="historyLink">Historia</a></li>
+                        <li><a href="construction.html" id="constructionLink">Planes de Construcción</a></li>
+                        <li><a href="tickets.html" id="ticketsLink">Entradas</a></li>
+                        <li><a href="status.html" id="statusLink">Estado Actual</a></li>
+                        <li><a href="donations.html" id="donationsLink">Apoya nuestros esfuerzos</a></li>
+                    </ul>
+                </td>
+                <td width="80%">
+                    <h2 id="constructionTitle">Nuestro Plan de Reconstrucción</h2>
+                    <p id="constructionDesc">Sky Tower se encuentra en una fase crítica de reconstrucción después de múltiples desastres naturales.</p>
+
+                    <h2 id="engineerTitle">Nuestro Ingeniero Jefe</h2>
+                    <p id="engineerDesc">El líder de la reconstrucción de Sky Tower, con más de 30 años de experiencia.</p>
+                    
+                    <!-- Imagen del constructor -->
+                    <img src="man.png" alt="Constructor" width="250">
+
+                    <h2 id="progressTitle">Progreso de Construcción</h2>
+                    
+                    <!-- GIFs de construcción (duplicando uno para que haya 4) -->
+                    <img src="c.gif" alt="Construcción en progreso" width="200">
+                    <img src="c.gif" alt="Construcción en progreso" width="200">
+                    <img src="c.gif" alt="Construcción en progreso" width="200">
+                    <img src="c.gif" alt="Construcción en progreso" width="200">
+
+                    <marquee behavior="scroll" direction="left" id="warning">
+                        ⚠️ La reconstrucción de Sky Tower está en progreso. Visitar la zona no está permitido. ⚠️
+                    </marquee>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

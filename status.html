@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title id="pageTitle">Sky Tower - Estado Actual</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo.png">
+    <script>
+        function translatePage() {
+            let body = document.body;
+            let elementsToTranslate = {
+                es: {
+                    title: "Sky Tower - Estado Actual",
+                    heading: "Sky Tower - Estado Actual",
+                    menu: "Menú",
+                    home: "Hogar",
+                    history: "Historia",
+                    construction: "Planes de Construcción",
+                    tickets: "Entradas",
+                    status: "Estado Actual",
+                    donations: "Apoya nuestros esfuerzos",
+                    statusTitle: "Estado de la Torre",
+                    statusDetails: "Sky Tower está actualmente cerrada debido a daños estructurales severos causados por múltiples desastres naturales.",
+                    reportTitle: "Reporte de Daños",
+                    damages: [
+                        "Meteoritos destruyeron el 60% de la estructura.",
+                        "Fallas de construcción causaron un colapso parcial.",
+                        "Tormentas eléctricas quemaron la sala de emergencias.",
+                        "Equipos de rescate aún investigan los restos."
+                    ],
+                    reopenTitle: "Fecha de Reapertura",
+                    reopenDetails: "No hay una fecha oficial de reapertura. Por ahora, el acceso está completamente restringido.",
+                    warning: "⚠️ Sky Tower sigue cerrado indefinidamente. No se recomienda visitar el área. ⚠️",
+                    translateButton: "Traducir"
+                },
+                en: {
+                    title: "Sky Tower - Current Status",
+                    heading: "Sky Tower - Current Status",
+                    menu: "Navigation",
+                    home: "Home",
+                    history: "History",
+                    construction: "Construction Plans",
+                    tickets: "Tickets & Admission",
+                    status: "Current Status",
+                    donations: "Support Our Efforts",
+                    statusTitle: "Tower Status",
+                    statusDetails: "Sky Tower is currently closed due to severe structural damage caused by multiple natural disasters.",
+                    reportTitle: "Damage Report",
+                    damages: [
+                        "Meteors destroyed 60% of the structure.",
+                        "Construction failures caused a partial collapse.",
+                        "Lightning storms burned the emergency room.",
+                        "Rescue teams are still investigating the remains."
+                    ],
+                    reopenTitle: "Reopening Date",
+                    reopenDetails: "There is no official reopening date. For now, access is completely restricted.",
+                    warning: "⚠️ Sky Tower remains indefinitely CLOSED. Visiting the area is not recommended. ⚠️",
+                    translateButton: "Translate"
+                }
+            };
+
+            document.getElementById("translateButton").style.transform = "scale(0.8)";
+            setTimeout(() => {
+                document.getElementById("translateButton").style.transform = "scale(1)";
+            }, 400);
+
+            let audio = new Audio("BUTTON1.wav");
+            audio.play();
+
+            let lang = body.lang === "es" ? "en" : "es";
+            body.lang = lang;
+
+            document.title = elementsToTranslate[lang].title;
+            document.getElementById("pageTitle").innerText = elementsToTranslate[lang].title;
+            document.querySelector("h1").innerText = elementsToTranslate[lang].heading;
+            document.getElementById("menuTitle").innerText = elementsToTranslate[lang].menu;
+            document.getElementById("homeLink").innerText = elementsToTranslate[lang].home;
+            document.getElementById("historyLink").innerText = elementsToTranslate[lang].history;
+            document.getElementById("constructionLink").innerText = elementsToTranslate[lang].construction;
+            document.getElementById("ticketsLink").innerText = elementsToTranslate[lang].tickets;
+            document.getElementById("statusLink").innerText = elementsToTranslate[lang].status;
+            document.getElementById("donationsLink").innerText = elementsToTranslate[lang].donations;
+            document.getElementById("statusTitle").innerText = elementsToTranslate[lang].statusTitle;
+            document.getElementById("statusDetails").innerText = elementsToTranslate[lang].statusDetails;
+            document.getElementById("reportTitle").innerText = elementsToTranslate[lang].reportTitle;
+            document.getElementById("damageList").innerHTML = elementsToTranslate[lang].damages.map(d => `<li>${d}</li>`).join('');
+            document.getElementById("reopenTitle").innerText = elementsToTranslate[lang].reopenTitle;
+            document.getElementById("reopenDetails").innerText = elementsToTranslate[lang].reopenDetails;
+            document.getElementById("warning").innerText = elementsToTranslate[lang].warning;
+            document.getElementById("translateButton").innerText = elementsToTranslate[lang].translateButton;
+        }
+
+        window.onload = function() {
+            alert("⚠️ ADVERTENCIA: Sky Tower sigue cerrado. No hay fecha estimada de reapertura.");
+        };
+    </script>
+    <style>
+        #translateButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: "Comic Sans MS", cursive;
+            background: linear-gradient(to bottom, #00BFFF, #00008B);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        #translateButton:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body bgcolor="#000000" text="#FFFFFF">
+    <button id="translateButton" onclick="translatePage()">Traducir</button>
+    
+    <center>
+        <!-- GIF decorativo -->
+        <img src="tower.gif" alt="Sky Tower Animation" width="700" height="120">
+
+        <table border="0" width="80%">
+            <tr>
+                <td colspan="2">
+                    <!-- Logo y título -->
+                    <img src="logo.png" alt="Sky Tower Logo" width="150" height="150">
+                    <h1 id="pageTitle">Sky Tower - Estado Actual</h1>
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" bgcolor="#202020">
+                    <h2 id="menuTitle">Menú</h2>
+                    <ul>
+                        <li><a href="Skytower.html" id="homeLink">Hogar</a></li>
+                        <li><a href="history.html" id="historyLink">Historia</a></li>
+                        <li><a href="construction.html" id="constructionLink">Planes de Construcción</a></li>
+                        <li><a href="tickets.html" id="ticketsLink">Entradas</a></li>
+                        <li><a href="status.html" id="statusLink">Estado Actual</a></li>
+                        <li><a href="donations.html" id="donationsLink">Apoya nuestros esfuerzos</a></li>
+                    </ul>
+                </td>
+                <td width="80%">
+                    <h2 id="statusTitle">Estado de la Torre</h2>
+                    <p id="statusDetails">Sky Tower está actualmente cerrada debido a daños estructurales severos causados por múltiples desastres naturales.</p>
+
+                    <h2 id="reportTitle">Reporte de Daños</h2>
+                    <ul id="damageList">
+                        <li>Meteoritos destruyeron el 60% de la estructura.</li>
+                        <li>Fallas de construcción causaron un colapso parcial.</li>
+                        <li>Tormentas eléctricas quemaron la sala de emergencias.</li>
+                        <li>Equipos de rescate aún investigan los restos.</li>
+                    </ul>
+
+                    <h2 id="reopenTitle">Fecha de Reapertura</h2>
+                    <p id="reopenDetails">No hay una fecha oficial de reapertura. Por ahora, el acceso está completamente restringido.</p>
+
+                    <marquee behavior="scroll" direction="left" id="warning">
+                        ⚠️ Sky Tower sigue cerrado indefinidamente. No se recomienda visitar el área. ⚠️
+                    </marquee>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
+

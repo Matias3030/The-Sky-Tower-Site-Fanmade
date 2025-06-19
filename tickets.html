@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title id="pageTitle">Sky Tower - Entradas</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo.png">
+    <script>
+        function translatePage() {
+            let body = document.body;
+            let elementsToTranslate = {
+                es: {
+                    title: "Sky Tower - Entradas",
+                    heading: "Sky Tower - Entradas",
+                    home: "Hogar",
+                    warning: "⚠️ Sky Tower sigue cerrado temporalmente. ¡Mantente informado! ⚠️",
+                    translateButton: "Traducir"
+                },
+                en: {
+                    title: "Sky Tower - Tickets",
+                    heading: "Sky Tower - Tickets",
+                    home: "Home",
+                    warning: "⚠️ Sky Tower remains temporarily CLOSED. Stay tuned for updates! ⚠️",
+                    translateButton: "Translate"
+                }
+            };
+
+            document.getElementById("translateButton").style.transform = "scale(0.8)";
+            setTimeout(() => {
+                document.getElementById("translateButton").style.transform = "scale(1)";
+            }, 400);
+
+            let audio = new Audio("BUTTON1.wav");
+            audio.play();
+
+            let lang = body.lang === "es" ? "en" : "es";
+            body.lang = lang;
+
+            document.title = elementsToTranslate[lang].title;
+            document.getElementById("pageTitle").innerText = elementsToTranslate[lang].title;
+            document.querySelector("h1").innerText = elementsToTranslate[lang].heading;
+            document.getElementById("homeLink").innerText = elementsToTranslate[lang].home;
+            document.getElementById("warning").innerText = elementsToTranslate[lang].warning;
+            document.getElementById("translateButton").innerText = elementsToTranslate[lang].translateButton;
+        }
+
+        window.onload = function() {
+            alert("⚠️ ADVERTENCIA: Los tickets no sirven para nada. Comprar uno no tiene ningún efecto en Sky Tower.");
+        };
+    </script>
+    <style>
+        #translateButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: "Comic Sans MS", cursive;
+            background: linear-gradient(to bottom, #00BFFF, #00008B);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body bgcolor="#000000" text="#FFFFFF">
+    <button id="translateButton" onclick="translatePage()">Traducir</button>
+    
+    <center>
+        <!-- GIF decorativo -->
+        <img src="tower.gif" alt="Sky Tower Animation" width="700" height="120">
+
+        <table border="0" width="80%">
+            <tr>
+                <td colspan="2">
+                    <!-- Logo y título -->
+                    <img src="logo.png" alt="Sky Tower Logo" width="150" height="150">
+                    <h1 id="pageTitle">Sky Tower - Entradas</h1>
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" bgcolor="#202020">
+                    <h2>Menú</h2>
+                    <ul>
+                        <li><a href="Skytower.html" id="homeLink">Hogar</a></li>
+                        <li><a href="history.html">Historia</a></li>
+                        <li><a href="construction.html">Planes de Construcción</a></li>
+                        <li><a href="tickets.html">Entradas</a></li>
+                        <li><a href="status.html">Estado Actual</a></li>
+                        <li><a href="donations.html">Apoya nuestros esfuerzos</a></li>
+                    </ul>
+                </td>
+                <td width="80%">
+                    <h2>Precios de Entradas</h2>
+                    <table border="1" width="60%">
+                        <tr bgcolor="#303030">
+                            <th>Tipo</th>
+                            <th>Precio (R$)</th>
+                            <th>Disponibilidad</th>
+                        </tr>
+                        <tr>
+                            <td>Admisión General</td>
+                            <td>250 R$</td>
+                            <td><b>No Disponible</b></td>
+                        </tr>
+                        <tr>
+                            <td>VIP Sky Deck</td>
+                            <td>500 R$</td>
+                            <td><b>No Disponible</b></td>
+                        </tr>
+                        <tr>
+                            <td>Paquete Tour del Desastre</td>
+                            <td>999 R$</td>
+                            <td><b>No Disponible</b></td>
+                        </tr>
+                    </table>
+
+                    <p><i>Debido a circunstancias imprevistas (como impactos de meteoritos e incendios), la venta de boletos está suspendida.</i></p>
+
+                    <h2>Cómo Comprar</h2>
+                    <p>Cuando Sky Tower reabra, los boletos estarán disponibles en nuestro <a href="https://www.roblox.com/es/communities/14827418/GenteEstupida3000#!/about">Grupo Oficial de Roblox</a>.</p>
+
+                    <h2>Política de Reembolsos</h2>
+                    <p><b>Todas las compras son finales.</b> Si la torre colapsa, tu compra sigue siendo no reembolsable.</p>
+
+                    <marquee behavior="scroll" direction="left" id="warning">
+                        ⚠️ Sky Tower sigue cerrado temporalmente. ¡Mantente informado! ⚠️
+                    </marquee>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
+

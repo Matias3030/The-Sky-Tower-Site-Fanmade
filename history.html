@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title id="pageTitle">Sky Tower - Historia</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo.png">
+    <script>
+        function translatePage() {
+            let body = document.body;
+            let elementsToTranslate = {
+                es: {
+                    title: "Sky Tower - Historia",
+                    heading: "Sky Tower - Historia",
+                    menu: "Menú",
+                    home: "Hogar",
+                    history: "Historia",
+                    construction: "Planes de Construcción",
+                    tickets: "Entradas",
+                    status: "Estado Actual",
+                    donations: "Apoya nuestros esfuerzos",
+                    storyTitle: "El origen de Sky Tower",
+                    storyDesc: "Construida con una visión ambiciosa, Sky Tower se convirtió en un ícono arquitectónico, aunque su historia está marcada por desastres y reconstrucciones constantes.",
+                    disasterTitle: "Los mayores desastres",
+                    disasters: [
+                        "2005 - Un terremoto dañó el nivel superior.",
+                        "2008 - Vientos extremos derribaron parte de la estructura.",
+                        "2013 - Un meteorito impactó en la base, causando el cierre indefinido.",
+                        "2024 - Intento de reconstrucción fallido debido a un tsunami."
+                    ],
+                    legacyTitle: "El legado de Sky Tower",
+                    legacyDesc: "A pesar de su turbulenta historia, Sky Tower sigue siendo un símbolo de resistencia y arquitectura… por lo menos hasta su próximo colapso.",
+                    warning: "⚠️ Sky Tower ha sufrido múltiples colapsos, su estabilidad sigue en duda. ⚠️",
+                    translateButton: "Traducir"
+                },
+                en: {
+                    title: "Sky Tower - History",
+                    heading: "Sky Tower - History",
+                    menu: "Navigation",
+                    home: "Home",
+                    history: "History",
+                    construction: "Construction Plans",
+                    tickets: "Tickets & Admission",
+                    status: "Current Status",
+                    donations: "Support Our Efforts",
+                    storyTitle: "The origin of Sky Tower",
+                    storyDesc: "Built with an ambitious vision, Sky Tower became an architectural icon, though its history is marked by constant disasters and reconstructions.",
+                    disasterTitle: "Major disasters",
+                    disasters: [
+                        "2005 - An earthquake damaged the upper level.",
+                        "2008 - Extreme winds knocked down part of the structure.",
+                        "2013 - A meteorite impacted the base, causing indefinite closure.",
+                        "2024 - Reconstruction attempt failed due to a tsunami."
+                    ],
+                    legacyTitle: "The legacy of Sky Tower",
+                    legacyDesc: "Despite its turbulent history, Sky Tower remains a symbol of resilience and architecture… at least until the next collapse.",
+                    warning: "⚠️ Sky Tower has suffered multiple collapses, its stability remains questionable. ⚠️",
+                    translateButton: "Translate"
+                }
+            };
+
+            document.getElementById("translateButton").style.transform = "scale(0.8)";
+            setTimeout(() => {
+                document.getElementById("translateButton").style.transform = "scale(1)";
+            }, 400);
+
+            let audio = new Audio("BUTTON1.wav");
+            audio.play();
+
+            let lang = body.lang === "es" ? "en" : "es";
+            body.lang = lang;
+
+            document.title = elementsToTranslate[lang].title;
+            document.getElementById("pageTitle").innerText = elementsToTranslate[lang].title;
+            document.querySelector("h1").innerText = elementsToTranslate[lang].heading;
+            document.getElementById("menuTitle").innerText = elementsToTranslate[lang].menu;
+            document.getElementById("homeLink").innerText = elementsToTranslate[lang].home;
+            document.getElementById("historyLink").innerText = elementsToTranslate[lang].history;
+            document.getElementById("constructionLink").innerText = elementsToTranslate[lang].construction;
+            document.getElementById("ticketsLink").innerText = elementsToTranslate[lang].tickets;
+            document.getElementById("statusLink").innerText = elementsToTranslate[lang].status;
+            document.getElementById("donationsLink").innerText = elementsToTranslate[lang].donations;
+            document.getElementById("storyTitle").innerText = elementsToTranslate[lang].storyTitle;
+            document.getElementById("storyDesc").innerText = elementsToTranslate[lang].storyDesc;
+            document.getElementById("disasterTitle").innerText = elementsToTranslate[lang].disasterTitle;
+            document.getElementById("disasterList").innerHTML = elementsToTranslate[lang].disasters.map(d => `<li>${d}</li>`).join('');
+            document.getElementById("legacyTitle").innerText = elementsToTranslate[lang].legacyTitle;
+            document.getElementById("legacyDesc").innerText = elementsToTranslate[lang].legacyDesc;
+            document.getElementById("warning").innerText = elementsToTranslate[lang].warning;
+            document.getElementById("translateButton").innerText = elementsToTranslate[lang].translateButton;
+        }
+    </script>
+    <style>
+        #translateButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: "Comic Sans MS", cursive;
+            background: linear-gradient(to bottom, #00BFFF, #00008B);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        #translateButton:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body bgcolor="#000000" text="#FFFFFF">
+    <button id="translateButton" onclick="translatePage()">Traducir</button>
+    
+    <center>
+        <!-- GIF decorativo -->
+        <img src="tower.gif" alt="Sky Tower Animation" width="700" height="120">
+
+        <table border="0" width="80%">
+            <tr>
+                <td colspan="2">
+                    <!-- Logo y título -->
+                    <img src="logo.png" alt="Sky Tower Logo" width="150" height="150">
+                    <h1 id="pageTitle">Sky Tower - Historia</h1>
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" bgcolor="#202020">
+                    <h2 id="menuTitle">Menú</h2>
+                    <ul>
+                        <li><a href="Skytower.html" id="homeLink">Hogar</a></li>
+                        <li><a href="history.html" id="historyLink">Historia</a></li>
+                        <li><a href="construction.html" id="constructionLink">Planes de Construcción</a></li>
+                        <li><a href="tickets.html" id="ticketsLink">Entradas</a></li>
+                        <li><a href="status.html" id="statusLink">Estado Actual</a></li>
+                        <li><a href="donations.html" id="donationsLink">Apoya nuestros esfuerzos</a></li>
+                    </ul>
+                </td>
+                <td width="80%">
+                    <h2 id="storyTitle">El origen de Sky Tower</h2>
+                    <p id="storyDesc">Construida con una visión ambiciosa, Sky Tower se convirtió en un ícono arquitectónico.</p>
+
+                    <h2 id="disasterTitle">Los mayores desastres</h2>
+                    <ul id="disasterList">
+                        <li>2005 - Un terremoto dañó el nivel superior.</li>
+                        <li>2008 - Vientos extremos derribaron parte de la estructura.</li>
+                        <li>2013 - Un meteorito impactó en la base, causando el cierre indefinido.</li>
+                        <li>2024 - Intento de reconstrucción fallido debido a un tsunami.</li>
+                    </ul>
+
+                    <h2 id="legacyTitle">El legado de Sky Tower</h2>
+                    <p id="legacyDesc">A pesar de su turbulenta historia, sigue siendo un símbolo de resistencia.</p>
+
+                    <marquee behavior="scroll" direction="left" id="warning">
+                        ⚠️ Sky Tower ha sufrido múltiples colapsos, su estabilidad sigue en duda. ⚠️
+                    </marquee>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
